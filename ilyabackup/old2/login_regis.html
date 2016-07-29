@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset="UTF-8">
+		<title>הרשמה</title> 
+        <link rel="stylesheet" href="css/style.css" 
+       
+	</head>
+
+	<body>
+		<div class="login-card">
+		<h1>הרשמה למערכת</h1><br>
+		
+		<?php	
+		
+		
+			$servername = "localhost";
+			$username = "proj";
+			$password = "proj";
+			$dbname = "bitahon";
+
+			// Create connection
+			$conn = new mysqli($servername, $username, $password, $dbname);
+
+
+			// Check connection
+			if ($conn->connect_error) {
+				die("Connection failed: " . $conn->connect_error);
+			}
+			
+			$conn->query("SET character_set_client=utf8");
+			$conn->query("SET character_set_connection=utf8");
+			$conn->query("SET character_set_database=utf8");
+			$conn->query("SET character_set_results=utf8");
+			$conn->query("SET character_set_server=utf8");
+			
+			// In case of success
+			if (isset($_POST["submit"]))
+			{
+				if ($_POST["pass1"] == $_POST["pass_confirm"]) {
+					// success!
+					$sql = "INSERT INTO User VALUES(".$_POST['id'].",'".$_POST['Fname']."','".$_POST['Lname']."','".$_POST['telephone1']."','".$_POST['telephone2']."','".$_POST['mail']."','".$_POST['address']."','".$_POST['pass1']."');";
+					$result = mysqli_query($conn,$sql);
+					if (!$result)
+					{
+						echo $result;
+						die(".תעודת זהות קיימת במערכת<br>".mysqli_error($conn));
+						//echo "<script>window.location = 'http://http://bitahon.tk/registration.php'</script>";	
+					}
+						//לעשות כפתור חזור
+					
+					//echo "<script>window.location = 'http://bitahon.tk/'</script>";
+				}
+				else {
+				   // failed 
+				   echo "<h3 color=#332233> !שימו לב! הסיסמא אינה זהה</h3>";
+				}
+
+			// GO TO MAIN
+			//echo "<script>window.location = 'http://bitahon.tk/'</script>";
+			}
+			$conn->close();
+		?>
+		
+     
+		<!--<div class="login-card"> -->
+		<center>
+          <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+           
+        
+			:שם פרטי
+              <label> <span class="req"></span>
+              </label>
+              <input type="text"required autocomplete="off" name="Fname" value="myfname"/>
+           
+			:שם משפחה
+              <label> <span class="req"></span> </label>
+              <input type="text" required autocomplete="off" name="Lname" value="mylname"/>
+		
+			:תעודת זהות
+              <label>
+               
+			   <span class="req"></span>
+              </label>
+              <input type="text"required autocomplete="off" name="id" value="30"/>
+            
+			:דואר אלקטרוני
+              <label>
+              <span class="req"></span>
+              </label>
+              <input type="email" required autocomplete="off" name="mail" value="mymail@m.com"/>
+        
+			:טלפון
+              <label>
+               <span class="req"></span>
+              </label>
+              <input type="text" required autocomplete="off" name="telephone1" value="myph1"/>
+            
+			:טלפון למקרה חירום
+              <label>
+                 <span class="req"></span>
+              </label>
+              <input type="text"required autocomplete="off" value="myph2"/>
+			
+			:כתובת
+            <label>
+               <span class="req"></span>
+            </label>
+            <input type="text"required autocomplete="off" name="address" value="myadd"/>
+
+			:סיסמא
+              <label>
+                 <span class="req"></span>
+              </label>
+              <input type="password" required autocomplete="off" name="pass1" />
+            
+                 
+          
+			:אימות סיסמא
+              <label>
+                <span class="req"></span>
+              </label>
+              <input type="password" required autocomplete="off" name="pass_confirm";/>
+                        
+            
+			<button type="submit" class="login login-submit" name="submit"/>ה11רשמה</button>
+		  
+          
+        </form>
+
+    </div>
+      
+	<?php
+		// Closing the connection
+		mysqli_close($conn);
+	?>
+
+	</div>
+    
+    
+    
+
+		
+		
+		
+		
+		
+		<!--<form action="main.php" method="post">
+		
+		<input type="submit" name="login" class="login login-submit" value="ה11תחברות">
+		</form> 
+		</div> -->
+
+
+    
+
+	</body>
+</html>

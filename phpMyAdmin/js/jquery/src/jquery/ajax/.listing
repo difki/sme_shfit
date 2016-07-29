@@ -1,0 +1,9 @@
+drwxr-xr-x    3 667        barifrah1        4096 Oct 10  2015 .
+drwxr-xr-x   15 667        barifrah1        4096 Oct 10  2015 ..
+-rw-r--r--    1 667        barifrah1        2516 Aug 20  2015 jsonp.js
+-rw-r--r--    1 667        barifrah1        1681 Aug 20  2015 load.js
+-rw-r--r--    1 667        barifrah1        1476 Aug 20  2015 parseJSON.js
+-rw-r--r--    1 667        barifrah1         650 Aug 20  2015 parseXML.js
+-rw-r--r--    1 667        barifrah1        1964 Aug 20  2015 script.js
+drwxr-xr-x    2 667        barifrah1        4096 Oct 10  2015 var
+-rw-r--r--    1 667        barifrah1        5786 Aug 20  2015 xhr.js

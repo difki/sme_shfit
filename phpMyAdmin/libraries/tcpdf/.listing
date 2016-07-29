@@ -1,0 +1,9 @@
+drwxr-xr-x    5 667        barifrah1        4096 Oct 10  2015 .
+drwxr-xr-x   15 667        barifrah1       12288 Oct 10  2015 ..
+-rw-r--r--    1 667        barifrah1       43636 Aug 20  2015 LICENSE.TXT
+-rw-r--r--    1 667        barifrah1        5555 Aug 20  2015 README.TXT
+drwxr-xr-x    2 667        barifrah1        4096 Oct 10  2015 config
+drwxr-xr-x    3 667        barifrah1        4096 Oct 10  2015 fonts
+drwxr-xr-x    2 667        barifrah1        4096 Oct 10  2015 include
+-rw-r--r--    1 667        barifrah1      897151 Aug 20  2015 tcpdf.php
+-rw-r--r--    1 667        barifrah1        7155 Aug 20  2015 tcpdf_autoconfig.php

@@ -1,0 +1,12 @@
+drwxr-xr-x    5 667        barifrah1        4096 Oct 10  2015 .
+drwxr-xr-x   19 667        barifrah1        4096 Oct 10  2015 ..
+-rw-r--r--    1 667        barifrah1        1977 Jan  6  2011 INSTALL
+drwxr-xr-x    2 667        barifrah1        4096 Oct 10  2015 doc
+-rw-r--r--    1 667        barifrah1         504 Jan  6  2011 index.php
+drwxr-xr-x    2 667        barifrah1        4096 Oct 10  2015 js
+drwxr-xr-x    2 667        barifrah1        4096 Oct 10  2015 modules
+-rw-r--r--    1 667        barifrah1        2673 Jan  6  2011 setup.php
+-rw-r--r--    1 667        barifrah1        1048 Jan  6  2011 sqspell_config.php
+-rw-r--r--    1 667        barifrah1       17897 Jan  6  2011 sqspell_functions.php
+-rw-r--r--    1 667        barifrah1        1450 Jan  6  2011 sqspell_interface.php
+-rw-r--r--    1 667        barifrah1        1479 Jan  6  2011 sqspell_options.php
