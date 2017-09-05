@@ -71,6 +71,17 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 		
 		echo'<h4> הנך מבצע שיבוץ  עבור עמדת '.$emname.'  </h4></center>';
 		}//end of else
+	  
+	  	echo "<br>Num of requested shifts<br>";
+                echo ' <table class="tftable" align="center" border="1" width="150">';
+                echo "<tr><th>Name</th><th>Num</th>";
+                $num_shifts_asked="select Fname, shiftasked from ApprovedUser join Fairness where Fairness.user_id=ApprovedUser.id;";
+                $num_of_shift_asked=mysqli_query($conn,$num_shifts_asked);
+                while ($num=mysqli_fetch_array($num_of_shift_asked)){
+
+                        echo "<tr><td>$num[0]</td><td>$num[1]</td></tr>";
+                }
+                echo "</table><br><br>";
 		
   if (isset($_POST["submit"]))
 	{
