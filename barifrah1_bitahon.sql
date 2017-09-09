@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.6.30, for debian-linux-gnu (x86_64)
 --
--- Host: localhost    Database: sme
+-- Host: localhost    Database: barifrah1_bitahon
 -- ------------------------------------------------------
 -- Server version	5.6.30-0ubuntu0.15.10.1
 
