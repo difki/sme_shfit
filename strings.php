@@ -1,6 +1,6 @@
 <?php
-$sql_username="barifrah1_proj";
+$sql_username="sme";
 $sql_servername="localhost";
-$sql_password="proj1234";
-$sql_dbname = "barifrah1_bitahon";
+$sql_password="sme";
+$sql_dbname = "sme_db";
 ?>
