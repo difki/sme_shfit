@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8">
 
-    <title>הסידור השבועי שלי </title>
+    <title>הסידור השבועי שלי!</title>
 	
  <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>   
  <!--<link rel="stylesheet" href="css/style_sch_guy.css" -->
