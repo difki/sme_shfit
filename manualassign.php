@@ -5,7 +5,7 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>שיבוץ ידני test</title>
+    <title>שיבוץ ידני</title>
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
@@ -183,7 +183,7 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 							$res6=mysqli_query($conn,$sql6);
 							while( $r6=mysqli_fetch_array($res6))
 								$aid=$r6[0];
-								echo "here $aid";
+								echo '<option> here '.$aid.' </option>';
 							
 							while( $r5=mysqli_fetch_array($res5)){
 							if($r5[3]==0)
