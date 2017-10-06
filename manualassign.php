@@ -184,7 +184,10 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 							while( $r6=mysqli_fetch_array($res6))
 								$aid=$r6[0];
 								$il="il";
-								echo '<option> here '.$il.' </option>';
+								echo '<option> il '.$il.' </option>';
+								echo '<option> r6 '.$r6.' </option>';
+								echo '<option> res5 '.$res5.' </option>';
+								echo '<option> res6 '.$res6.' </option>';
 							
 							while( $r5=mysqli_fetch_array($res5)){
 							if($r5[3]==0)
