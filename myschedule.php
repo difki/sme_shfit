@@ -262,7 +262,7 @@ $id=$_SESSION["global_id"];
 								
 								$num_asked=mysqli_fetch_array($num_shifts_asked);
 								$num=mysqli_fetch_array($num_of_shift);
-								echo "$id[1] - asked=$num_asked got=$num[0] <br>";
+								echo "$id[1] - asked=$num_asked[0] got=$num[0] <br>";
 
 
 							
