@@ -185,7 +185,7 @@ $id=$_SESSION["global_id"];
 //================================Shifts===========================================================
 
 								echo ' <table class="tftable"  align="center" border="1">';
-								echo "<center><h3>משמרות</h3></center>";
+								echo "<center><h3>Shifts</h3></center>";
 								echo '<tr><th>ראשון '.$this_date_sunday.'</th><th >שני '.$this_date_monday.'</th><th >שלישי '.$this_date_tuesday.'</th><th >רביעי '.$this_date_wednesday.'</th><th >חמישי '.$this_date_thursday.'</th><th >שישי '.$this_date_friday.'</th><th>שבת '.$this_date_saturday.'</th></tr>';
 								echo '<tr>';
 								$i=0;
@@ -218,7 +218,7 @@ $id=$_SESSION["global_id"];
 //================================Next week===========================================================          
 //================================Shifts===========================================================
 								echo ' <table class="tftable"  align="center" border="1">';
-								echo "<center><h3>משמרות</h3></center>";
+								echo "<center><h3>Shifts</h3></center>";
 								echo '<tr><th>ראשון '.$date_sunday.'</th><th >שני '.$date_monday.'</th><th >שלישי '.$date_tuesday.'</th><th >רביעי '.$date_wednesday.'</th><th >חמישי '.$date_thursday.'</th><th >שישי '.$date_friday.'</th><th>שבת '.$date_saturday.'</th></tr>';
 								echo '<tr>';
 								$i=0;
