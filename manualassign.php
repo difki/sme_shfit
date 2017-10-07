@@ -207,7 +207,7 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 								$color="green";
 							
 							if($r5[0]==$aid)
-								echo '<option selected style="background-color:'.$color.'" value='.$r5[0].'>'.$r5[1].' '.$r5[2].' '.$r5[3].'</option>'; 
+								echo '<option selected style="background-color:'.$color.'" value='.$r5[0].'>'.$r5[1].' '.$r5[2].' '.$r5[3].' curreent </option>'; 
 							else
 								echo '<option style="background-color:'.$color.'" value='.$r5[0].'>'.$r5[1].' '.$r5[2].' '.$r5[3].'</option>';
 							}// end of while
