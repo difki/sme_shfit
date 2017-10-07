@@ -182,36 +182,6 @@ $id=$_SESSION["global_id"];
 							{
 			
 //================================This week===========================================================
-//================================On call===========================================================
-								echo "<center><h3>כוננויות</h3></center>";
-								echo ' <table class="tftable"  align="center" border="1">';
-								echo '<tr><th>ראשון '.$this_date_sunday.'</th><th >שני '.$this_date_monday.'</th><th >שלישי '.$this_date_tuesday.'</th><th >רביעי '.$this_date_wednesday.'</th><th >חמישי '.$this_date_thursday.'</th><th >שישי '.$this_date_friday.'</th><th>שבת '.$this_date_saturday.'</th></tr>';
-								echo '<tr>';
-								$i=0;
-								$j=0;
-								$this_date_saturday = date("Y-m-d", strtotime('saturday', $this_week));
-								$this_date_sunday = date("Y-m-d", strtotime('sunday', $this_week));
-								foreach ($week as $day)
-								{
-									echo '<td>
-									
-												<table class="tftable" align="center" border="1">';
-									$sql3="  SELECT oncall_start,oncall_end, au.Fname,au.Lname,S.ord
-									FROM Oncall aa Inner JOIN Shift S INNER JOIN ApprovedUser au ON aa.user_id=au.id and S.shift_start=aa.oncall_start and S.shift_end=aa.oncall_end and S.shift_day=aa.oncall_day and S.gpid=aa.gpid
-									where oncall_day='$day' and oncall_date>='".$this_date_sunday."' and oncall_date<='".$this_date_saturday."' and au.gpid=".$_SESSION["global_gpid"]." order by S.ord ASC;";
-									$res=mysqli_query($conn,$sql3);
-									while( $r1=mysqli_fetch_array($res))
-									{
-										echo '<tr><td>'.$r1["oncall_start"].'-'.$r1["oncall_end"].'</td></tr><tr><td>'.$r1["Fname"].' '.$r1["Lname"].'</td></tr>';
-										echo '<td bgcolor="#dcdac0"></td>';
-										$i=$i+1;
-									}
-									echo '</table></div></td>';
-										
-									$j=$j+5;
-									$i=$j;
-								}
-								echo '</tr></table><br>';   
 //================================Shifts===========================================================
 
 								echo ' <table class="tftable"  align="center" border="1">';
@@ -245,37 +215,7 @@ $id=$_SESSION["global_id"];
 										
 								}
 								echo '</tr></table><br>';
-//================================Next week===========================================================
-//================================On call===========================================================
-								echo "<center><h3>כוננויות</h3></center>";
-								echo ' <table class="tftable"  align="center" border="1">';
-								echo '<tr><th>ראשון '.$date_sunday.'</th><th >שני '.$date_monday.'</th><th >שלישי '.$date_tuesday.'</th><th >רביעי '.$date_wednesday.'</th><th >חמישי '.$date_thursday.'</th><th >שישי '.$date_friday.'</th><th>שבת '.$date_saturday.'</th></tr>';
-								echo '<tr>';
-								$i=0;
-								$j=0;
-								$date_saturday = date("Y-m-d", strtotime('saturday', $next_week));
-								$date_sunday = date("Y-m-d", strtotime('sunday', $next_week));
-								foreach ($week as $day)
-								{
-									echo '<td>
-					
-												<table class="tftable" align="center" border="1">';
-									$sql3="  SELECT oncall_start,oncall_end, au.Fname,au.Lname,S.ord
-									FROM Oncall aa Inner JOIN Shift S INNER JOIN ApprovedUser au ON aa.user_id=au.id and S.shift_start=aa.oncall_start and S.shift_end=aa.oncall_end and S.shift_day=aa.oncall_day and S.gpid=aa.gpid
-									where oncall_day='$day' and oncall_date>='".$date_sunday."' and oncall_date<='".$date_saturday."' and au.gpid=".$_SESSION["global_gpid"]." order by S.ord ASC;";
-									$res=mysqli_query($conn,$sql3);
-									while( $r1=mysqli_fetch_array($res))
-									{
-										echo '<tr><td>'.$r1["oncall_start"].'-'.$r1["oncall_end"].'</td></tr><tr><td>'.$r1["Fname"].' '.$r1["Lname"].'</td></tr>';
-										echo '<td bgcolor="#dcdac0"></td>';
-										$i=$i+1;
-									}
-									echo '</table></div></td>';
-								
-									$j=$j+5;
-									$i=$j;
-								}
-								echo '</tr></table><br>';           
+//================================Next week===========================================================          
 //================================Shifts===========================================================
 								echo ' <table class="tftable"  align="center" border="1">';
 								echo "<center><h3>משמרות</h3></center>";
