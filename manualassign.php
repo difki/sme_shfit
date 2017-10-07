@@ -180,6 +180,7 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 
 							$res5=mysqli_query($conn,$sql5);
 							$sql6="select distinct F.user_id from AssignedAt F where F.assignedat_start='".$r1[0]."' and F.assignedat_end='".$r1[1]."' and F.assignedat_day='".$day."' and F.gpid=".$emda."  and assignedat_date>='".$date_sunday."' and assignedat_date<='".$date_saturday."' ; ";
+							$sql666="select distinct F.user_id from AssignedAt F where F.assignedat_start='".$r1[0]."' ";
 							$res6=mysqli_query($conn,$sql6);
 							while( $r6=mysqli_fetch_array($res6))
 								$aid=$r6[0];
@@ -188,6 +189,7 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 								echo '<option> r1[1] '.$r1[1].' </option>';
 								echo '<option> day '.$day.' </option>';
 								echo '<option> sql6 '.$sql6.' </option>';
+								echo '<option> sql666 '.$sql666.' </option>';
 		
 							while( $r5=mysqli_fetch_array($res5)){
 							if($r5[3]==0)
