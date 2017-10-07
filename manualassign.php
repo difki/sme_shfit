@@ -186,6 +186,8 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 								$aid=$r6[0];
 								$il="il";
 								echo '<option> date_saturday '.$date_saturday.' </option>';
+								echo '<option> next_week '.$next_week.' </option>';
+								
 								echo '<option> r1[0] '.$r1[0].' </option>';
 								echo '<option> r1[1] '.$r1[1].' </option>';
 								echo '<option> day '.$day.' </option>';
