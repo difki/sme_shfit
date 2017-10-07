@@ -18,6 +18,14 @@
 	include('menu.php');
 	include('strings.php');
 	include('pagebase.php');
+	$next_week = strtotime('next Sunday');
+	$date_monday = date("Y-m-d", strtotime('monday', $next_week));
+	$date_tuesday = date("Y-m-d", strtotime('tuesday', $next_week));
+	$date_wednesday = date("Y-m-d", strtotime('wednesday', $next_week));
+	$date_thursday = date("Y-m-d", strtotime('thursday', $next_week));
+	$date_friday = date("Y-m-d", strtotime('friday', $next_week));
+	$date_saturday = date("Y-m-d", strtotime('saturday', $next_week));
+	$date_sunday = date("Y-m-d", strtotime('sunday', $next_week));
 	
 	$conn = new mysqli($sql_servername, $sql_username, $sql_password, $sql_dbname);
 	$conn->query("SET character_set_client=utf8");
@@ -93,14 +101,6 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 	{
 		$emda=$_SESSION["global_gpid"];
 	}
-					$next_week = strtotime('next Sunday');
-					$date_monday = date("Y-m-d", strtotime('monday', $next_week));
-					$date_tuesday = date("Y-m-d", strtotime('tuesday', $next_week));
-					$date_wednesday = date("Y-m-d", strtotime('wednesday', $next_week));
-					$date_thursday = date("Y-m-d", strtotime('thursday', $next_week));
-					$date_friday = date("Y-m-d", strtotime('friday', $next_week));
-					$date_saturday = date("Y-m-d", strtotime('saturday', $next_week));
-					$date_sunday = date("Y-m-d", strtotime('sunday', $next_week));
 					$bigweek=array(
 							array(day => "ראשון",array(0,0,0,0,0),array(0,0,0,0,0),am_day => 0,dat=>$date_sunday),
 							array(day => "שני",array(0,0,0,0,0),array(0,0,0,0,0),am_day =>0,dat=>$date_monday),
@@ -184,15 +184,6 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 							$res6=mysqli_query($conn,$sql6);
 							while( $r6=mysqli_fetch_array($res6))
 								$aid=$r6[0];
-								$il="il";
-								$next_week = strtotime('next Sunday');
-								$date_monday = date("Y-m-d", strtotime('monday', $next_week));
-								$date_tuesday = date("Y-m-d", strtotime('tuesday', $next_week));
-								$date_wednesday = date("Y-m-d", strtotime('wednesday', $next_week));
-								$date_thursday = date("Y-m-d", strtotime('thursday', $next_week));
-								$date_friday = date("Y-m-d", strtotime('friday', $next_week));
-								$date_saturday = date("Y-m-d", strtotime('saturday', $next_week));
-								$date_sunday = date("Y-m-d", strtotime('sunday', $next_week));
 								echo '<option> date_saturday '.$date_saturday.' </option>';
 								echo '<option> next_week '.$next_week.' </option>';
 								echo( "<option> sorttime" . strtotime('next Sunday') . "</option>>");
