@@ -120,7 +120,7 @@ $id=$_SESSION["global_id"];
 								
 								echo ' <table class="tftable"  align="center" border="1">';
 								
-								echo '<tr><th>יום</td><th>משמרות - השבוע</td></tr>';
+								echo '<tr><th>יום</td><th>Shifts</td></tr>';
 								echo '<tr>';
 									
 								$i=0;
@@ -149,7 +149,7 @@ $id=$_SESSION["global_id"];
 //================================Next week===========================================================
 								echo ' <table class="tftable"  align="center" border="1">';
 						
-								echo '<tr><th>יום</td><th >משמרות - שבוע הבא</td></tr>';
+								echo '<tr><th>יום</td><th>Next week</td></tr>';
 								echo '<tr>';
 									
 								$i=0;
