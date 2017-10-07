@@ -185,19 +185,19 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 							while( $r6=mysqli_fetch_array($res6))
 								$aid=$r6[0];							
 								while( $r5=mysqli_fetch_array($res5)){
-								if($r5[3]==0)
-									$color="red";
-								elseif($r5[3]==1)
-									$color="orange";
-								elseif($r5[3]==2)
-									$color="yellow";
-								else
-									$color="green";
-							
-								if($r5[0]==$aid)
-									echo '<option selected style="background-color:'.$color.'" value='.$r5[0].'>'.$r5[1].' '.$r5[2].' '.$r5[3].' curreent </option>'; 
-								else
-									echo '<option style="background-color:'.$color.'" value='.$r5[0].'>'.$r5[1].' '.$r5[2].' '.$r5[3].'</option>';
+									if($r5[3]==0)
+										$color="red";
+									elseif($r5[3]==1)
+										$color="orange";
+									elseif($r5[3]==2)
+										$color="yellow";
+									else
+										$color="green";
+
+									if($r5[0]==$aid)
+										echo '<option selected style="background-color:'.$color.'" value='.$r5[0].'>'.$r5[1].' '.$r5[2].' '.$r5[3].' </option>'; 
+									else
+										echo '<option style="background-color:'.$color.'" value='.$r5[0].'>'.$r5[1].' '.$r5[2].' '.$r5[3].'</option>';
 								}// end of while
 							echo '</select></td></tr>';
 							$i=$i+1;
