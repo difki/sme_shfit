@@ -187,6 +187,7 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 								echo '<option> r1[0] '.$r1[0].' </option>';
 								echo '<option> r1[1] '.$r1[1].' </option>';
 								echo '<option> day '.$day.' </option>';
+								echo '<option> sql6 '.$sql6.' </option>';
 		
 							while( $r5=mysqli_fetch_array($res5)){
 							if($r5[3]==0)
