@@ -18,6 +18,14 @@
 	include('menu.php');
 	include('strings.php');
 	include('pagebase.php');
+	$next_week = strtotime('next Sunday');
+	$date_monday = date("Y-m-d", strtotime('monday', $next_week));
+	$date_tuesday = date("Y-m-d", strtotime('tuesday', $next_week));
+	$date_wednesday = date("Y-m-d", strtotime('wednesday', $next_week));
+	$date_thursday = date("Y-m-d", strtotime('thursday', $next_week));
+	$date_friday = date("Y-m-d", strtotime('friday', $next_week));
+	$date_saturday = date("Y-m-d", strtotime('saturday', $next_week));
+	$date_sunday = date("Y-m-d", strtotime('sunday', $next_week));
 	
 	$conn = new mysqli($sql_servername, $sql_username, $sql_password, $sql_dbname);
 	$conn->query("SET character_set_client=utf8");
@@ -93,14 +101,6 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 	{
 		$emda=$_SESSION["global_gpid"];
 	}
-					$next_week = strtotime('next Sunday');
-					$date_monday = date("Y-m-d", strtotime('monday', $next_week));
-					$date_tuesday = date("Y-m-d", strtotime('tuesday', $next_week));
-					$date_wednesday = date("Y-m-d", strtotime('wednesday', $next_week));
-					$date_thursday = date("Y-m-d", strtotime('thursday', $next_week));
-					$date_friday = date("Y-m-d", strtotime('friday', $next_week));
-					$date_saturday = date("Y-m-d", strtotime('saturday', $next_week));
-					$date_sunday = date("Y-m-d", strtotime('sunday', $next_week));
 					$bigweek=array(
 							array(day => "ראשון",array(0,0,0,0,0),array(0,0,0,0,0),am_day => 0,dat=>$date_sunday),
 							array(day => "שני",array(0,0,0,0,0),array(0,0,0,0,0),am_day =>0,dat=>$date_monday),
@@ -182,23 +182,22 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 							$sql6="select distinct F.user_id from AssignedAt F where F.assignedat_start='".$r1[0]."' and F.assignedat_end='".$r1[1]."' and F.assignedat_day='".$day."' and F.gpid=".$emda."  and assignedat_date>='".$date_sunday."' and assignedat_date<='".$date_saturday."' ; ";
 							$res6=mysqli_query($conn,$sql6);
 							while( $r6=mysqli_fetch_array($res6))
-								$aid=$r6[0];
-							
-							while( $r5=mysqli_fetch_array($res5)){
-							if($r5[3]==0)
-								$color="red";
-							elseif($r5[3]==1)
-								$color="orange";
-							elseif($r5[3]==2)
-								$color="yellow";
-							else
-								$color="green";
-							
-							if($r5[0]==$aid)
-								echo '<option selected style="background-color:'.$color.'" value='.$r5[0].'>'.$r5[1].' '.$r5[2].' '.$r5[3].'</option>'; 
-							else
-								echo '<option style="background-color:'.$color.'" value='.$r5[0].'>'.$r5[1].' '.$r5[2].' '.$r5[3].'</option>';
-							}// end of while
+								$aid=$r6[0];							
+								while( $r5=mysqli_fetch_array($res5)){
+									if($r5[3]==0)
+										$color="red";
+									elseif($r5[3]==1)
+										$color="orange";
+									elseif($r5[3]==2)
+										$color="yellow";
+									else
+										$color="green";
+
+									if($r5[0]==$aid)
+										echo '<option selected style="background-color:'.$color.'" value='.$r5[0].'>'.$r5[1].' '.$r5[2].' '.$r5[3].' </option>'; 
+									else
+										echo '<option style="background-color:'.$color.'" value='.$r5[0].'>'.$r5[1].' '.$r5[2].' '.$r5[3].'</option>';
+								}// end of while
 							echo '</select></td></tr>';
 							$i=$i+1;
 							}// end of while
