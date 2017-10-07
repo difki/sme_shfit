@@ -183,34 +183,22 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 							$sql666="select distinct F.user_id from AssignedAt F where F.assignedat_start='".$r1[0]."' ";
 							$res6=mysqli_query($conn,$sql6);
 							while( $r6=mysqli_fetch_array($res6))
-								$aid=$r6[0];
-								echo '<option> date_saturday '.$date_saturday.' </option>';
-								echo '<option> next_week '.$next_week.' </option>';
-								echo( "<option> sorttime" . strtotime('next Sunday') . "</option>>");
-								#$next_week = strtotime('next Sunday');
-								
-								echo '<option> date_tuesday '.$date_tuesday.' </option>';
-								echo '<option> r1[0] '.$r1[0].' </option>';
-								echo '<option> r1[1] '.$r1[1].' </option>';
-								echo '<option> day '.$day.' </option>';
-								echo '<option> sql6 '.$sql6.' </option>';
-								
-		
-							while( $r5=mysqli_fetch_array($res5)){
-							if($r5[3]==0)
-								$color="red";
-							elseif($r5[3]==1)
-								$color="orange";
-							elseif($r5[3]==2)
-								$color="yellow";
-							else
-								$color="green";
+								$aid=$r6[0];							
+								while( $r5=mysqli_fetch_array($res5)){
+								if($r5[3]==0)
+									$color="red";
+								elseif($r5[3]==1)
+									$color="orange";
+								elseif($r5[3]==2)
+									$color="yellow";
+								else
+									$color="green";
 							
-							if($r5[0]==$aid)
-								echo '<option selected style="background-color:'.$color.'" value='.$r5[0].'>'.$r5[1].' '.$r5[2].' '.$r5[3].' curreent </option>'; 
-							else
-								echo '<option style="background-color:'.$color.'" value='.$r5[0].'>'.$r5[1].' '.$r5[2].' '.$r5[3].'</option>';
-							}// end of while
+								if($r5[0]==$aid)
+									echo '<option selected style="background-color:'.$color.'" value='.$r5[0].'>'.$r5[1].' '.$r5[2].' '.$r5[3].' curreent </option>'; 
+								else
+									echo '<option style="background-color:'.$color.'" value='.$r5[0].'>'.$r5[1].' '.$r5[2].' '.$r5[3].'</option>';
+								}// end of while
 							echo '</select></td></tr>';
 							$i=$i+1;
 							}// end of while
