@@ -187,7 +187,8 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 								$il="il";
 								echo '<option> date_saturday '.$date_saturday.' </option>';
 								echo '<option> next_week '.$next_week.' </option>';
-								echo( "<option> sorttime" . strtotime("now") . "</option>>");
+								echo( "<option> sorttime" . strtotime('next Sunday') . "</option>>");
+								#$next_week = strtotime('next Sunday');
 								
 								echo '<option> date_tuesday '.$date_tuesday.' </option>';
 								echo '<option> r1[0] '.$r1[0].' </option>';
