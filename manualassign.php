@@ -186,6 +186,7 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 								$il="il";
 								echo '<option> il '.$il.' </option>';
 								echo '<option> r6 '.$r6.' </option>';
+								echo '<option> r7 '.$r6.' </option>';
 		
 							while( $r5=mysqli_fetch_array($res5)){
 							if($r5[3]==0)
