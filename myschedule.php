@@ -262,7 +262,7 @@ $id=$_SESSION["global_id"];
 								
 								$num_asked=mysqli_fetch_array($num_shifts_asked);
 								$num=mysqli_fetch_array($num_of_shift);
-								echo "Name  -  Asked/Got
+								echo "Name  -  Asked/Got";
 								echo "$id[1] - $num_asked[0]/$num[0] <br>";
 
 
