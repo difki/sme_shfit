@@ -80,16 +80,7 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 		echo'<h4> הנך מבצע שיבוץ  עבור עמדת '.$emname.'  </h4></center>';
 		}//end of else
 	  
-	  	echo "<br>Num of requested shifts<br>";
-                echo ' <table class="tftable" align="center" border="1" width="150">';
-                echo "<tr><th>Name</th><th>Num</th>";
-                $num_shifts_asked="select Fname, shiftasked from ApprovedUser join Fairness where Fairness.user_id=ApprovedUser.id;";
-                $num_of_shift_asked=mysqli_query($conn,$num_shifts_asked);
-                while ($num=mysqli_fetch_array($num_of_shift_asked)){
 
-                        echo "<tr><td>$num[0]</td><td>$num[1]</td></tr>";
-                }
-                echo "</table><br><br>";
 		
   if (isset($_POST["submit"]))
 	{
@@ -208,7 +199,8 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 							echo '</tr></table>';
 	  						$get_sme_id="SELECT id, Fname FROM `ApprovedUser` WHERE gpid=$emda ORDER BY `ApprovedUser`.`role` DESC";
 							$smes = mysqli_query($conn,$get_sme_id);
-							echo "<br><br>Name - Asked/Got<br>";
+							echo ' <table class="tftable" align="center" border="1" width="150">';
+               						echo "<tr><th>Name</th><th>Asked</th><th>Got</th>";
 							while( $id=mysqli_fetch_array($smes)){
 								$num_shifts_asked_query="select shiftasked from ApprovedUser join Fairness where Fairness.user_id=ApprovedUser.id and Fairness.user_id=".$id[0]." ;";
 								$count_shifts_query="select COUNT(*) from Shift S JOIN AssignedAt A on S.shift_start=A.assignedat_start and S.shift_end=A.assignedat_end and S.shift_day=A.assignedat_day and S.gpid=A.gpid JOIN ApprovedUser AP on AP.id=A.user_id where A.assignedat_date>='".$date_sunday."' and A.assignedat_date<='".$date_saturday."'  and A.gpid=".$emda." and A.user_id=".$id[0]." ;";
@@ -219,8 +211,10 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 								$num_asked=mysqli_fetch_array($num_shifts_asked);
 								$num=mysqli_fetch_array($num_of_shift);
 								
-								echo "$id[1] - $num_asked[0]/$num[0] <br>";
+								echo "<tr><td>$id[1]</td><td>$num_asked[0]</td><td>$num[0]</td></tr>";
 							}
+							  echo "</table><br><br>";
+           
 							echo '<br/><br/> <center><button type="submit" class="login login-submit" name="submit">שבץ</button></center>';
 	  
 
