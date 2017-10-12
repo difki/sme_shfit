@@ -206,7 +206,23 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 							$i=$j;
 						}
 							echo '</tr></table>';
+	  						$get_sme_id="SELECT id, Fname FROM `ApprovedUser` WHERE gpid=$emda ORDER BY `ApprovedUser`.`role` DESC";
+							$smes = mysqli_query($conn,$get_sme_id);
+							echo "Name - Asked/Got<br>";
+							while( $id=mysqli_fetch_array($smes)){
+								$num_shifts_asked_query="select shiftasked from ApprovedUser join Fairness where Fairness.user_id=ApprovedUser.id and Fairness.user_id=".$id[0]." ;";
+								$count_shifts_query="select COUNT(*) from Shift S JOIN AssignedAt A on S.shift_start=A.assignedat_start and S.shift_end=A.assignedat_end and S.shift_day=A.assignedat_day and S.gpid=A.gpid JOIN ApprovedUser AP on AP.id=A.user_id where A.assignedat_date>='".$date_sunday."' and A.assignedat_date<='".$date_saturday."'  and A.gpid=".$emda." and A.user_id=".$id[0]." ;";
+								
+								$num_of_shift=mysqli_query($conn,$count_shifts_query);
+								$num_shifts_asked=mysqli_query($conn,$num_shifts_asked_query);
+								
+								$num_asked=mysqli_fetch_array($num_shifts_asked);
+								$num=mysqli_fetch_array($num_of_shift);
+								
+								echo "$id[1] - $num_asked[0]/$num[0] <br>";
+							}
 							echo '<br/><br/> <center><button type="submit" class="login login-submit" name="submit">שבץ</button></center>';
+	  
 
   ?>
   </form>
