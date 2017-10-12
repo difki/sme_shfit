@@ -199,6 +199,7 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 							echo '</tr></table><br><br>';
 	  						$get_sme_id="SELECT id, Fname FROM `ApprovedUser` WHERE gpid=$emda ORDER BY `ApprovedUser`.`role` DESC";
 							$smes = mysqli_query($conn,$get_sme_id);
+							echo"<style> table {   border-collapse: collapse;} table, td, th {  border: 1px solid black;}</style>";
 							echo ' <table align="center" border="1" width="60">';
                						echo "<tr><th>Name</th><th>Asked</th><th>Got</th></tr>";
 							while( $id=mysqli_fetch_array($smes)){
@@ -217,7 +218,7 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 								elseif ($num[0]<$num_asked[0])
 									$color="yellow";
 									
-								echo "<tr bgcolor=$color><td>$id[1]</td><td>$num_asked[0]</td><<td>$num[0]</td></tr>";
+								echo "<tr bgcolor=$color><td>$id[1]</td><td>$num_asked[0]</td><td>$num[0]</td></tr>";
 
 							}
 							  echo "</table><br><br>";
