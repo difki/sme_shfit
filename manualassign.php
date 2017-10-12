@@ -199,7 +199,7 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 							echo '</tr></table><br><br>';
 	  						$get_sme_id="SELECT id, Fname FROM `ApprovedUser` WHERE gpid=$emda ORDER BY `ApprovedUser`.`role` DESC";
 							$smes = mysqli_query($conn,$get_sme_id);
-							echo ' <table align="center" border="1" width="60" border-collapse="collapse">';
+							echo ' <table align="center" border="1" width="60">';
                						echo "<tr><th>Name</th><th>Asked</th><th>Got</th></tr>";
 							while( $id=mysqli_fetch_array($smes)){
 								$num_shifts_asked_query="select shiftasked from ApprovedUser join Fairness where Fairness.user_id=ApprovedUser.id and Fairness.user_id=".$id[0]." ;";
