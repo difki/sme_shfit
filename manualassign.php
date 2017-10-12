@@ -210,14 +210,14 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 								
 								$num_asked=mysqli_fetch_array($num_shifts_asked);
 								$num=mysqli_fetch_array($num_of_shift);
-								if ($num[0]==$num_asked[0])
-									$color="green";
+								//if ($num[0]==$num_asked[0])
+								//	$color="green";
 								//elseif ($num[0]>$num_asked[0])
 								//	$color="red";
 								//elseif ($num[0]<$num_asked[0])
 								//	$color="yellow";
 									
-								echo "<tr bgcolor="$color"><td>$num[0]</td><td>$num_asked[0]</td><td>$id[1]</td></tr>";
+								echo "<tr bgcolor="green"><td>$num[0]</td><td>$num_asked[0]</td><td>$id[1]</td></tr>";
 							}
 							  echo "</table><br><br>";
            
