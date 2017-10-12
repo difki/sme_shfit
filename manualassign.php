@@ -217,8 +217,8 @@ echo'<center><h1><u> שיבוץ ידני</u></h1>';
 								elseif ($num[0]<$num_asked[0])
 									$color="yellow";
 									
-								//echo "<tr bgcolor="green"><td>$num[0]</td><td>$num_asked[0]</td><td>$id[1]</td></tr>";
-								echo "hello";
+								echo "<tr bgcolor=$color><td>$num[0]</td><td>$num_asked[0]</td><td>$id[1]</td></tr>";
+
 							}
 							  echo "</table><br><br>";
            
